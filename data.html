@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Fake Dane — RAIDFORUMS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>RAIDFORUMS</h1>
+      <p class="subtitle">Prawidzwe Dane Osób</p>
+      <nav>
+        <a href="index.html">Forum</a>
+        <a href="data.html">Dane</a>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Dane Osób To kopienia na disordzie</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Imię</th>
+            <th>Email</th>
+            <th>Hasło</th>
+            <th>IP</th>
+          </tr>
+        </thead>
+        <tbody id="fakeData">
+          <!-- dane zostaną wygenerowane przez JS -->
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p>Wszystkie dane Prawdziwych Osób</p>
+    </footer>
+  </div>
+
+  <script>
+    const names = ["Oskar Przygoda", "Oskar Przygoda", "Oskar Przygoda", "Oskar Przygoda", "Oskar Przygoda"];
+    const domains = ["oskarprzygoda010@gmail.com", "oskarprzygoda010@gmail.com", "oskarprzygoda010@gmail.com", "oskarprzygoda010@gmail.com"];
+    const passwords = ["oskarek2015 Nieaktywne", "oskarek2015 Nieaktywne", "oskarek2015 Nieaktywne", "oskarek2015 Nieaktywne", "oskarek2015 Nieaktywne"];
+    
+    function getRandomIP() {
+      return `${rand(1, 255)}.${rand(0, 255)}.${rand(0, 255)}.${rand(1, 254)}`;
+    }
+
+    function rand(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    const tbody = document.getElementById("fakeData");
+    for (let i = 0; i < 10; i++) {
+      const name = names[rand(0, names.length - 1)];
+      const email = name.toLowerCase().replace(/ /g, ".") + "@" + domains[rand(0, domains.length - 1)];
+      const password = passwords[rand(0, passwords.length - 1)];
+      const ip = getRandomIP();
+
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${name}</td>
+        <td>${email}</td>
+        <td>${password}</td>
+        <td>${ip}</td>
+      `;
+      tbody.appendChild(row);
+    }
+  </script>
+</body>
+</html>

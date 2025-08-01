@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>RaidForums v6.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>RAIDFORUMS</h1>
+      <p class="subtitle">Forum wszystkie posty jako <strong>Anonymous</strong></p>
+    </header>
+<div class="admin-profile">
+  <img src="https://tse4.mm.bing.net/th/id/OIP.8UiLcVfCiaV-HZose-lZbgHaJZ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Administrator">
+  <div class="admin-info">
+    <div class="admin-name">Administrator</div>
+    <div class="admin-nick">@KockerS13</div>
+  </div>
+</div>
+
+
+    <section id="post-form">
+      <textarea id="messageInput" placeholder="Napisz swoją wiadomość..."></textarea>
+      <button onclick="addPost()">Wyślij</button>
+    </section>
+
+    <section id="forum">
+      <!-- Wiadomości pojawią się tutaj -->
+    </section>
+
+    <footer>
+      <p>Project Hackerski Forum</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+<div class="chat-window">
+  <div class="chat-header">Mini Chat</div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <textarea id="chatInput" placeholder="Napisz wiadomość..."></textarea>
+  <button onclick="sendChat()">Wyślij</button>
+</div>
+
+</html>
+<nav>
+  <a href="index.html">Forum</a>
+  <a href="data.html">Dane</a>
+</nav>
